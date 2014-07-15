@@ -6,7 +6,7 @@ function GetCourses() {
     $courses=array();
     $database=Database::get();
     $database->queryFunc('SELECT title FROM course',
-		function($row) use (&$courses) {$courses[]=$row;  /*var_dump($row);echo$row->title;*/ }
+		function($row) use (&$courses) {$courses[]=$row;  var_dump($row);/*echo$row->title;*/ }
 		);
 	 echo Json_encode($courses);
 }
